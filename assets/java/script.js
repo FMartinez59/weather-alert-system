@@ -12,7 +12,7 @@ var weatherDayContainerEl = document.querySelector("#weather-day-container");
 var outerForecastContainerEl = document.querySelector("#outer-forecast-container");
 var weatherDayDateEl = document.querySelector("#weather-day-date");
 
-var baseUrl = "http://api.openweathermap.org/";
+var baseUrl = "https://api.openweathermap.org/";
 var apiKey = "6e4e54792e03870ea10d0a9af2e7b0bf";
 
 function populate5day(data) {
