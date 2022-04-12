@@ -14,7 +14,7 @@ var weatherDayDateEl = document.querySelector("#weather-day-date");
 
 var baseUrl = "https://api.openweathermap.org/";
 var apiKey = "6e4e54792e03870ea10d0a9af2e7b0bf";
-
+//Gets five day forecast data from api then creates it in the inner HTML to display it based on user city input
 function populate5day(data) {
   forecastContainerEl.innerHTML = "";
   data.forEach(function (day, index) {
@@ -51,7 +51,7 @@ function populate5day(data) {
   });
   outerForecastContainerEl.classList.remove("hide");
 }
-
+//grabs the users input city's current weather then displays it in inner HTML
 function getCityDayWeather(city) {
   var url = `${baseUrl}geo/1.0/direct?q=${city}&limit=1&appid=${apiKey}`;
 
@@ -109,7 +109,7 @@ function getCityDayWeather(city) {
         });
     });
 }
-
+//previously stored cities get turned into a button and when clicked will display weather info of that city
 function populateButtons() {
   buttonContainerEl.innerHTML = "";
   var cities = window.localStorage.getItem("cities");
@@ -127,7 +127,7 @@ function populateButtons() {
     buttonContainerEl.appendChild(button);
   });
 }
-
+//stores previous city searches 
 function storeCityLocation(city) {
   city = city.toLowerCase();
   var cities = window.localStorage.getItem("cities");
